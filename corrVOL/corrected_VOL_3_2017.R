@@ -531,16 +531,28 @@ ggsave("Henderson_v_Ramirez.png", scale = 1, height = 8.5, width = 14, units = "
 ggplot() + 
   geom_segment(data = line_coord, 
                aes(x = x, y = y, xend = xend, yend = yend), linetype = "dashed") +
-  geom_line(data = filter(lorenz_data_reduced, Name == "Mike Trout"), 
+  geom_line(data = lorenz_data_reduced, 
             aes(perc_game, perc_runs, 
                 group = player_year),
-            color = "red") + 
+            color = "#969696",
+            size = .70, 
+            alpha = .1) +
+  geom_line(data = rhenderson, 
+            aes(perc_game, perc_runs), 
+            color = "#003831", 
+            size = 1.25) +
   xlab("\nPercent of Cumulative Games Played\n") +
   ylab("\nPercent of Cumulative wRC\n") +
-  coord_flip() +
+  ggtitle("\nwRC Distribution for Individual Seasons Since 1974") +
+  labs(subtitle = "Rickey Henderson's 1992 Season (dark green)\n") +
   scale_y_continuous(labels = percent) +
   scale_x_continuous(labels = percent) +
-  tht_theme()
+  tht_theme() +
+  theme(title = element_text(face = "bold", size = 16), 
+        strip.text.x = element_text(face = "bold", size = 12),
+        axis.text = element_text(size = 12, face = "bold"))
+
+ggsave("Henderson_v_All.png", scale = 1, height = 8.5, width = 14, units = "in")
 
 slice(arrange(fit_values, corrVOL), 1:25) %>%
   DT::datatable(data = .)
