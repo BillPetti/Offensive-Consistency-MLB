@@ -634,9 +634,9 @@ individual_seasons_VOL_corrVOL <- fit_values %>%
   select(-PlayerId, -zscore, -error) %>%
   mutate(predicted = round(predicted, 3), wRC = round(wRC,1), `wRC+` = round(`wRC+`,0))
 
-names(individual_seasons_VOL_corrVOL) <- c("Name", "Season", "Games", "PA", "wRC", "PA_G", "VOL", "wRC+", "expectedVOL", "corrVOL")
+names(individual_seasons_VOL_corrVOL) <- c("Name", "Season", "Games", "PA", "wRC", "PA_G", "VOL", "wRCplus", "expectedVOL", "corrVOL")
 
 individual_seasons_VOL_corrVOL <- individual_seasons_VOL_corrVOL %>%
-  select(Name, Season, Games, PA, PA_G, wRC, `wRC+`, VOL, expectedVOL, corrVOL)
+  select(Name, Season, Games, PA, PA_G, wRC, wRCplus, VOL, expectedVOL, corrVOL)
 
 write.csv(individual_seasons_VOL_corrVOL, "individual_seasons_VOL_corrVOL_1974_2016.csv", row.names = FALSE)
