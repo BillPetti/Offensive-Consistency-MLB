@@ -464,6 +464,8 @@ averages_player <- fit_values %>%
 
 names(averages_player) <- c("Name", "Seasons", "Average corrVOL", "Average wRC+") 
 
+write.csv(averages_player, "corrVOL_Career_Averages.csv", row.names = FALSE)
+
 top_5_ave <- averages_player %>%
   filter(Seasons > 4) %>%
   arrange(`Average corrVOL`) %>%
