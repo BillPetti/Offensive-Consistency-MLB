@@ -19,5 +19,5 @@ require(DT)
 
 df <- read.csv("/Users/williampetti/Offensive-Consistency-MLB/corrVOL/individual_seasons_VOL_corrVOL_1974_2016.csv")
 
-DT::datatable(df, filter = "top", options = list(lengthMenu = list(c(25, 50, 75, 100, -1), c('25', '50', '75', '100', 'All')), pageLength = 25, autoWidth = FALSE))
+DT::datatable(df, filter = "top", options = list(lengthMenu = list(c(25, 50, 75, 100, -1), c('25', '50', '75', '100', 'All')), pageLength = 25, autoWidth = FALSE), rownames = FALSE)
 ```
