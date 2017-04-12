@@ -1,5 +1,5 @@
 ---
-title: "Volatilty (VOL) and Corrected Volatility (corrVOL): Individual Seaons, 1974-2016"
+title: "Volatility (VOL) and Corrected Volatility (corrVOL): Individual Seasons, 1974-2016"
 output: html_document
 keep_md: yes
 ---
@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 Created and maintained by [Bill Petti](https://billpetti.github.io)  
 To learn more about VOL and corrVOL, see [here](http://www.hardballtimes.com/corrvol-updating-how-we-can-measure-hitter-volatility/)  
-Data used to calculate Volatilty measures courtesey of [Fangraphs.com](https://Fangraphs.com)  
+Data used to calculate Volatility measures courtesy of [Fangraphs.com](https://Fangraphs.com)  
 
 ```{r}
 require(tidyverse)
